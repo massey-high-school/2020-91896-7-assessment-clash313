@@ -21,5 +21,5 @@ def unit_checker(preferred_unit):
         print(unit_to_check)
         return unit_to_check
 
-question_1 = (unit_checker("unit ?"))
-print == question_1
+question_1 = unit_checker("unit ?")
+print(question_1)

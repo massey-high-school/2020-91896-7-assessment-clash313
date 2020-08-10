@@ -1,25 +1,31 @@
 # Function goes here
 
 
-def num_checker(question):
+# Number Checking Function
+def num_check(question):
 
-    error = "it should contain greater numbers than zero"
+    error = "Please enter a number that is more than zero"
 
     valid = False
     while not valid:
-        response = input(question)
-        has_errors = ""
+        try:
+            response = float(input(question))
 
-        # look at each character in string and if it's a number, complain
-        for letter in response:
-            if letter.isdigit():
-                has_errors = "yes"
-                break
+            if response <= 0:
+                print(error)
+            else:
+                return response
 
-        if response == "":
-            continue
-        elif has_errors != "":
+        except ValueError:
             print(error)
-            continue
-        else:
-            return response
+
+width = num_check("width of the shape? ")
+length = num_check("length of the shape?")
+
+available_shapes = ["circle", "square", "rectangle", "triangle", "parallelogram", "trapezium"]
+
+
+print("num checker: {}".format(num_check))
+
+
+

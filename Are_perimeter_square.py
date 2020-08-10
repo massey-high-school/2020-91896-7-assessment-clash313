@@ -1,25 +1,62 @@
 # Function goes here
 
 
-def num_checker(question):
+# Number Checking Function
+def num_check(question):
 
-    error = "it should contain greater numbers than zero"
+    error = "Please enter a number that is more than zero"
 
     valid = False
     while not valid:
-        response = input(question)
-        has_errors = ""
+        try:
+            response = float(input(question))
 
-        # look at each character in string and if it's a number, complain
-        for letter in response:
-            if letter.isdigit():
-                has_errors = "yes"
-                break
+            if response <= 0:
+                print(error)
+            else:
+                return response
 
-        if response == "":
-            continue
-        elif has_errors != "":
+        except ValueError:
             print(error)
-            continue
-        else:
+
+
+def string_checker(question, to_check):
+    valid = False
+    while not valid:
+
+        response = input(question).lower()
+
+        if response in to_check:
             return response
+
+        else:
+            for item in to_check:
+                # checks if response is the first letter of an item in the list
+                if response == item[0]:
+                    # note: returns the entire response rather than just the first letter
+                    return item
+
+                print("Can only be circle, square, rectangle, triangle, parallelogram or trapezium")
+
+# Main routine
+
+history = []
+
+# loop to get shape and do calculations...
+
+    # ask for shape
+available_shapes = ["circle", "square", "rectangle", "triangle", "parallelogram", "trapezium"]
+
+ask_user = string_checker("choose a shape to use:", available_shapes)
+print(ask_user)
+
+    # get area
+
+    # get perimeter
+
+    # add shape, area and perimeter to list
+
+    # add shape_details to history
+
+
+# output entire history
