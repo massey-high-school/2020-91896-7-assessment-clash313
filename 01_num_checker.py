@@ -19,10 +19,10 @@ def num_check(question):
         except ValueError:
             print(error)
 
-width = num_check("width of the shape? ")
-length = num_check("length of the shape?")
+width = num_check("width of rectangle: ")
 
-available_shapes = ["circle", "square", "rectangle", "triangle", "parallelogram", "trapezium"]
+# Main routine goes here
+
 
 
 print("num checker: {}".format(num_check))
